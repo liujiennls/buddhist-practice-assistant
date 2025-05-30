@@ -1,0 +1,26 @@
+{
+  "name": "智慧圆觉 · 佛学修行助手",
+  "short_name": "智慧圆觉",
+  "description": "一款融合现代科技与佛学智慧的修行助手，帮助您念珠计数、记录禅修、获取佛陀法语",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f3e9",
+  "theme_color": "#800020",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "education", "utilities"],
+  "lang": "zh-CN"
+}
