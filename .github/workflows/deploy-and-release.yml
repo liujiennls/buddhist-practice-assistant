@@ -1,1 +1,40 @@
+name: Deploy and Release Buddhist Practice Assistant
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering
+
+env:
+  # Common environment variables for Node.js
+  NODE_VERSION: '18'
+  CARGO_TERM_COLOR: always # Keep for potential future Rust steps, or remove if strictly only PWA
+
+jobs:
+  build-and-deploy-pwa:
+    name: Build and Deploy PWA to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install frontend dependencies
+        run: npm install
+
+      - name: Build frontend (PWA)
+        run: npm run build # This command builds the Vite/React frontend for deployment
+
+      - name: Deploy PWA to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # The directory where Vite builds the frontend
+          enable_jekyll: false # Disable Jekyll to prevent issues with files starting with underscore
