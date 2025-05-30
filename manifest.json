@@ -9,8 +9,44 @@
   "orientation": "any",
   "icons": [
     {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "icons/icon-192x192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
@@ -21,6 +57,51 @@
       "purpose": "any maskable"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "念珠计数",
+      "short_name": "念珠",
+      "description": "开始念珠计数修行",
+      "url": "/?mode=counter",
+      "icons": [{ "src": "icons/counter-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "禅修记录",
+      "short_name": "禅修",
+      "description": "记录今日禅修时间",
+      "url": "/?mode=meditation",
+      "icons": [{ "src": "icons/meditation-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/home-screen.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "主页面"
+    },
+    {
+      "src": "screenshots/counter-screen.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "念珠计数器"
+    },
+    {
+      "src": "screenshots/home-screen-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "移动端主页面"
+    }
+  ],
   "categories": ["lifestyle", "education", "utilities"],
-  "lang": "zh-CN"
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "iarc_rating_id": "",
+  "scope": "/",
+  "id": "buddhist-practice-assistant"
 }
