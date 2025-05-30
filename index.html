@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>智慧圆觉 · 佛学修行助手</title>
+    <meta name="description" content="一款融合现代科技与佛学智慧的修行辅助工具，帮助您在数字时代寻找内心的平静" />
+    
+    <!-- PWA 支持 -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#800020" />
+    <meta name="background-color" content="#f8f3e9" />
+    
+    <!-- iOS 特定标签 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="智慧圆觉" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
+    
+    <!-- Android Chrome 特定标签 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png" />
+    <link rel="icon" sizes="512x512" href="/icons/icon-512x512.png" />
+    
+    <!-- 防止移动设备上的缩放 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 确保正确渲染和触摸缩放 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 允许Tauri API正常工作 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:;">
+    
+    <!-- 引入适合佛教主题的中文字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA Service Worker 注册 -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker 注册成功: ', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker 注册失败: ', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
